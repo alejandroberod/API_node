@@ -4,6 +4,7 @@ import { showPerson, showPersonId, createPerson, deletePerson, updatePerson } fr
 const router = Router();
 
 router.get('/person', showPerson);
+router.get('/person/:id', showPersonId);
 router.post('/person', createPerson);
 router.put('/person/:id', updatePerson);
 router.delete('/person/:id', deletePerson);

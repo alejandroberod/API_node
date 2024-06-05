@@ -10,8 +10,13 @@ app.get('/ping', async (req, res) => {
 })
 
 app.use(express.json());
-app.use(personRoutes);
+app.use('/api', personRoutes);
 
+app.use((rep, res) => {
+    res.status(404).json({
+        Message: "Endpoint losses"
+    })
+})
 const port = 4000;
 
 app.listen(port, () => {
